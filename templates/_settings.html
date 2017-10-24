@@ -1,0 +1,12 @@
+{% import '_includes/forms' as forms %}
+
+<p>In order to use this plugin, you must provide a URL to a JSON feed containing a single object called 'entry'.</p>
+
+{{ forms.textField({
+	label: 'Feed URL',
+	required: true,
+	name: 'feedUrl',
+	value: settings.feedUrl,
+	placeholder: "https://www.leiths.com/blog/feed",
+	errors: settings.getErrors('feedUrl')
+}) }}
