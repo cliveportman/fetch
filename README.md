@@ -1,4 +1,4 @@
-# fetch for Craft CMS
+# Fetch, for Craft CMS
 
 Fetches a simple JSON feed containing an object called 'entry'. Be sure to add the URL for this within the plugin's settings. It was built to pull a blog post from one site to display it on another. Here's a sample JSON template:
 
