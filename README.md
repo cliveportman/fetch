@@ -16,3 +16,17 @@ Fetches a simple JSON feed containing an object called 'entry'. It was built to 
 		"image": "{% set image = entry.image.first %}{% set lowRes = { mode: 'fit', width: 900 } %}{{ image.getUrl(lowRes) }}"
 	}
 }
+```
+And it's pulled through to the HTML template like so:
+```
+{% set entry = craft.fetch.fetchEntry() %}
+<article>
+	<header class="matchheight">
+		<h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+		<time>{{ entry.date }}</time>
+		<p>{{ entry.summary }}</p>
+	</header>
+	<a href="{{ entry.url }}">
+		<img src="{{ entry.image }}" alt="">
+	</a>
+</article>
